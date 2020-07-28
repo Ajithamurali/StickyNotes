@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Projects</title>
+	<style>
+	
+	.flip-box {
+  background-color: transparent;
+  width: 350px;
+  height: 350px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; 
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-box-back {
+  background-color: #8585ad;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+</style>
+</head>
+<body>
+	<center>
+		<h3 style="font-family: cursive;">UTILITY-1 :Make a new note</h3>
+	<div class="flip-box"><div class="flip-box-inner"> <div class="flip-box-front"><img src="https://cmeimg-a.akamaihd.net/640/photos.demandstudios.com/getty/article/232/198/458865339.jpg"  width ="350px" height="350px"/></div>
+	<div class="flip-box-back"><h3><b>New note</b></h3><br>
+            <center><form method="post" action="insert">Note Name :<br><input type="text" name="note_name"/></center><br>
+      Detail :<br><textarea rows="7" name="des"></textarea><br><br>
+      <center><input type="submit" name="enter" value="Save"><br></center>
+    </form></div></div></div>
+ 
+ 
+ <h3 style="font-family: cursive;">UTILITY-2 :Display All</h3>
+	<div class="flip-box"><div class="flip-box-inner"> <div class="flip-box-front"><img src="https://cmeimg-a.akamaihd.net/640/photos.demandstudios.com/getty/article/232/198/458865339.jpg"  width ="350px" height="350px"/></div><div class="flip-box-back">
+<h3>Display All Notes</h3><br>
+ <form method="get" action="display"><p>Displays all note</p><br><br>
+  <input type="submit" name="view" value="Display"><br>
+    </form>
+</div></div></div>
+
+<h3 style="font-family: cursive;">UTILITY-3 :Delete a note</h3>
+  <div class="flip-box"><div class="flip-box-inner"> <div class="flip-box-front"><img src="https://cmeimg-a.akamaihd.net/640/photos.demandstudios.com/getty/article/232/198/458865339.jpg"  width ="350px" height="350px"/></div><div class="flip-box-back">
+<h3>Delete a Note</h3><br>
+ <form method="post" action="delete">Note Name :<input type="text" name="del_name"/><br><br>
+  <input type="submit" name="view" value="Delete"><br>
+    </form>
+</div></div></div>
+
+<h3 style="font-family: cursive;">UTILITY-4 :Search</h3>
+  <div class="flip-box"><div class="flip-box-inner"> <div class="flip-box-front"><img src="https://cmeimg-a.akamaihd.net/640/photos.demandstudios.com/getty/article/232/198/458865339.jpg"  width ="350px" height="350px"/></div><div class="flip-box-back">
+<h3>To Search a Note</h3><br>
+ <form method="get" action="search" >Note Name :<input type="text" name="sea_name"/><br><br>
+  <input type="submit" name="view" value="Display"><br>
+    </form>
+</div></div></div>
+ 
+
+</body>
+</html>
